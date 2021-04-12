@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void dec_sum(int a,int b) __attribute__((cdecl));
+void dec_add(int a,int b) __attribute__((cdecl));
 
 int main( int argc, char *argv[] )  {
 
@@ -14,7 +14,7 @@ if ((char)argv[3][0]=='+'){
 
 int a = atoi(argv[2]);
 int b = atoi(argv[4]);
-dec_sum(a,b);
+dec_add(a,b);
     
 return 0;
 

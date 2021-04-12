@@ -15,8 +15,8 @@ segment .bss
  
 
 segment .text
-        global  dec_sum
-dec_sum:
+        global  dec_add
+dec_add:
         enter   0,0               ; setup routine
         pusha
 
