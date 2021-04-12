@@ -1,6 +1,6 @@
 %include "asm_io.inc"
 segment .data
-msg1 db    "Se realizara una resta decimal: ", 0
+msg1 db    "Se realizara una resta binaria: ", 0
 
 segment .bss
 ;
@@ -8,8 +8,8 @@ segment .bss
 ;
 
 segment .text
-        global  dec_sub
-dec_sub:
+        global  bin_sub
+bin_sub:
         enter   0,0               ; setup routine
         pusha
 
