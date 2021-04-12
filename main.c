@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void dec_add(int a,int b) __attribute__((cdecl));
 
 int main( int argc, char *argv[] )  {
 
-if (argv[1]=="dec"){
-    printf("Decimal calculator");
+if (!(strcmp(argv[1], "dec"))){
+    printf("Decimal calculator\n");
 }
 if ((char)argv[3][0]=='+'){
     //printf("Sum\n");
