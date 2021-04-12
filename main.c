@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 void dec_add(int a,int b) __attribute__((cdecl));
 void dec_sub(int a,int b) __attribute__((cdecl));
 void bin_add(int a,int b) __attribute__((cdecl));
 void bin_sub(int a,int b) __attribute__((cdecl));
+
+int isNumber(char s[]);
 
 int main( int argc, char *argv[] )  {
 
@@ -31,7 +34,7 @@ if (!(strcmp(argv[1], "dec"))){
         printf("Invalid operand %s. Must contains only numbers\n", argv[2]);
         exit(EXIT_FAILURE);
     }
-    if(!isNumber(argv[2])){
+    if(!isNumber(argv[4])){
         printf("Invalid operand %s. Must contains only numbers\n", argv[4]);
         exit(EXIT_FAILURE);
     }
@@ -54,10 +57,10 @@ if (!(strcmp(argv[1], "bin"))){
 exit(EXIT_SUCCESS);
 }
 
-int isNumber(char cadena[]) {
+int isNumber(char s[]) {
     int i = 0;
-    while (cadena[i]) {
-        if (!isdigit(cadena[i]) return 0;
+    while (s[i]) {
+        if (!isdigit(s[i])) return 0;
         i++;
     }
     return 1;
