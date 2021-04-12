@@ -9,7 +9,7 @@ if (argv[1]=="dec"){
     printf("Decimal calculator");
 }
 if ((char)argv[3][0]=='+'){
-    printf("Sum");
+    //printf("Sum\n");
 }
 
 int a = atoi(argv[2]);
