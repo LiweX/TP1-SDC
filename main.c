@@ -27,6 +27,14 @@ if (!( ((char)argv[3][0]=='+') || ((char)argv[3][0]=='-') )){
 
 if (!(strcmp(argv[1], "dec"))){
     printf("Decimal calculator\n");
+    if(!isNumber(argv[2])){
+        printf("Invalid operand %s. Must contains only numbers\n", argv[2]);
+        exit(EXIT_FAILURE);
+    }
+    if(!isNumber(argv[2])){
+        printf("Invalid operand %s. Must contains only numbers\n", argv[4]);
+        exit(EXIT_FAILURE);
+    }
     int a = atoi(argv[2]);
     int b = atoi(argv[4]);
     if ((char)argv[3][0]=='+') dec_add(a,b);
@@ -44,4 +52,13 @@ if (!(strcmp(argv[1], "bin"))){
 
 // TODO: FREE EN CASO DE MALLOC
 exit(EXIT_SUCCESS);
+}
+
+int isNumber(char cadena[]) {
+    int i = 0;
+    while (cadena[i]) {
+        if (!isdigit(cadena[i]) return 0;
+        i++;
+    }
+    return 1;
 }
