@@ -22,3 +22,21 @@ Decimal calculator
 Se realizara una resta decimal: -4"
 response2=$(./calc dec 2 - 6)
 assert_equals "$response2" "$test2"
+
+test3="The 4 arguments supplied are bin 111 + 1
+Binary calculator
+Se realizara una suma binaria: 1000 ==> 8"
+response3=$(./calc bin 111 + 1)
+assert_equals "$response3" "$test3"
+
+test4="The 4 arguments supplied are bin 1010 - 111
+Binary calculator
+Se realizara una resta binaria: 11 ==> 3"
+response4=$(./calc bin 1010 - 111)
+assert_equals "$response4" "$test4"
+
+#test5="The 4 arguments supplied are bin 1010 - 1111
+#Binary calculator
+#Se realizara una resta binaria: 11 ==> -5"
+#response5=$(./calc bin 1010 - 1111)
+#assert_equals "$response5" "$test5"
