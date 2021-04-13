@@ -29,7 +29,7 @@ if (!( ((char)argv[3][0]=='+') || ((char)argv[3][0]=='-') )){
 }
 
 if (!(strcmp(argv[1], "dec"))){
-   // printf("Decimal calculator\n");
+    printf("Decimal calculator\n");
     if(!isNumber(argv[2])){
         printf("Invalid operand %s. Must contains only numbers\n", argv[2]);
         exit(EXIT_FAILURE);
