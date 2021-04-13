@@ -6,8 +6,8 @@
 
 void dec_add(int a,int b) __attribute__((cdecl));
 void dec_sub(int a,int b) __attribute__((cdecl));
-void bin_add(int a,int b) __attribute__((cdecl));
-void bin_sub(int a,int b) __attribute__((cdecl));
+void bin_add(int a,int b,int*result) __attribute__((cdecl));
+void bin_sub(int a,int b,int*result) __attribute__((cdecl));
 
 int main( int argc, char *argv[] )  {
 if( argc == 5 ) {
@@ -54,8 +54,9 @@ if (!(strcmp(argv[1], "dec"))){
     }
     int a = string_binary_to_decimal(argv[2]);
     int b = string_binary_to_decimal(argv[4]);
-    if ((char)argv[3][0]=='+') bin_add(a,b);
-    if ((char)argv[3][0]=='-') bin_sub(a,b);
+    int result=0;
+    if ((char)argv[3][0]=='+') bin_add(a,b,&result);
+    if ((char)argv[3][0]=='-') bin_sub(a,b,&result);
 }else{
     printf("Unknown type %s. Must be dec or bin\n", argv[1]);
     exit(EXIT_FAILURE);

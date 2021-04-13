@@ -19,8 +19,6 @@ bin_sub:
         mov eax,[ebp + 8]
         sub eax,[ebp + 12]
 
-        call print_int
-        
         popa
         mov     eax, 0            ; return back to C
         leave                     

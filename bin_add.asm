@@ -19,7 +19,6 @@ bin_add:
         mov eax,[ebp + 8]
         add eax,[ebp + 12]
 
-        call print_int
         
         popa
         mov     eax, 0            ; return back to C

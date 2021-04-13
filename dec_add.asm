@@ -20,7 +20,8 @@ dec_add:
         add eax,[ebp + 12]
 
         call print_int
-        
+        call print_nl
+
         popa
         mov     eax, 0            ; return back to C
         leave                     

@@ -14,5 +14,11 @@ assert_equals () {
 test1="The 4 arguments supplied are dec 5 + 5
 Decimal calculator
 Se realizara una suma decimal: 10"
-response=$(./calc dec 5 + 5)
-assert_equals "$response" "$test1"
+response1=$(./calc dec 5 + 5)
+assert_equals "$response1" "$test1"
+
+test2="The 4 arguments supplied are dec 2 - 6
+Decimal calculator
+Se realizara una resta decimal: -4"
+response2=$(./calc dec 2 - 6)
+assert_equals "$response2" "$test2"
