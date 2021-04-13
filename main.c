@@ -13,7 +13,7 @@ int isNumber(char s[]);
 int main( int argc, char *argv[] )  {
 
 if( argc == 5 ) {
-    printf("The %d arguments supplied are %s %s %s %s \n",argc-1, argv[1], argv[2],argv[3],argv[4]);
+    printf("The %d arguments supplied are %s %s %s %s\n",argc-1, argv[1], argv[2],argv[3],argv[4]);
 }
 else {
     printf("Invalid operands, cast should be: \"./calc <dec/bin> <Operand1> <Operator> <Operand2>\"\n");
