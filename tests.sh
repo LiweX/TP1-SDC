@@ -2,7 +2,7 @@
 
 assert_equals () {
   if [ "$1" = "$2" ]; then
-    echo -e "$Green $Check_Mark La calcu anda gooding and chero banchero $Color_Off"
+    echo -e "$Green $Check_Mark All test passed successfully :) $Color_Off"
   else
     echo -e "$Red Failed $Color_Off"
     echo -e "$Red Expected -$1- to equal -$2- $Color_Off"
