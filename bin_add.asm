@@ -12,6 +12,7 @@ segment .text
 bin_add:
         enter   0,0               ; setup routine
         pusha
+        push ebx
 
         mov eax,msg1
         call print_string
@@ -19,7 +20,10 @@ bin_add:
         mov eax,[ebp + 8]
         add eax,[ebp + 12]
 
-        
+        mov ebx,[ebp + 16]
+        mov [ebx],eax
+
+        pop ebx
         popa
         mov     eax, 0            ; return back to C
         leave                     
