@@ -1,6 +1,7 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <math.h>
+#include <string.h>
 
 int isNumber(char s[]);
 int isBinary(char s[]);
@@ -43,13 +44,14 @@ int string_binary_to_decimal(char* s){
 *   @brief Se imprime el numero decimal "n" en forma de numero binario
 */
 int print_decimal_in_binary(int n){
-    
+    char* buffer = malloc(32 * sizeof(char));
     /*
     double logar = logbase(n, (double)2);
     if(1 % logar) logar+=1;    
     printf("n=%d",n);
     printf("log2 n=%d",(int)logbase(n, (double)2));
     char buffer[n];
+
     for(int i; n > 0; i++){
         if(n & 1)
             buffer[n-i]='1';
@@ -59,19 +61,26 @@ int print_decimal_in_binary(int n){
     }  
 
     char buffer[33];
-    itoa(n,buffer,2);
-    printf("Binary: %s\n",buffer); */
+    //itoa(n,buffer,2);
+    sprintf(buffer,"%d",n);
+    printf("Binary: %s\n",buffer);*/
 
     
     while (n) {
         if (n & 1)
-            printf("1");
+            strcat(buffer, "1");
         else
-            printf("0");
+            strcat(buffer, "0");
         n >>= 1; //n = n >> 1 Es una operacion shift right, o sea dividir por 2
     }
 
-    printf(" ==> ");//, buffer);
+    printf("%s", buffer);
+    /*
+    for(int i=strlen(buffer); i>0;i--){
+        printf("%d", buffer[i]);
+    }*/
+
+    printf(" ==> ");
 }
 
 /*!
