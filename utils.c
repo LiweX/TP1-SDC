@@ -45,27 +45,7 @@ int string_binary_to_decimal(char* s){
 */
 int print_decimal_in_binary(int n){
     char* buffer = malloc(32 * sizeof(char));
-    /*
-    double logar = logbase(n, (double)2);
-    if(1 % logar) logar+=1;    
-    printf("n=%d",n);
-    printf("log2 n=%d",(int)logbase(n, (double)2));
-    char buffer[n];
-
-    for(int i; n > 0; i++){
-        if(n & 1)
-            buffer[n-i]='1';
-        else
-            buffer[n-i]='0';
-        n >>= 1; //n = n >> 1 Es una operacion shift right, o sea dividir por 2
-    }  
-
-    char buffer[33];
-    //itoa(n,buffer,2);
-    sprintf(buffer,"%d",n);
-    printf("Binary: %s\n",buffer);*/
-
-    
+    int result = n;    
     while (n) {
         if (n & 1)
             strcat(buffer, "1");
@@ -73,15 +53,16 @@ int print_decimal_in_binary(int n){
             strcat(buffer, "0");
         n >>= 1; //n = n >> 1 Es una operacion shift right, o sea dividir por 2
     }
-
-    printf("%s", buffer);
-    /*
+    //printf("%s ----- ", buffer);    
     for(int i=strlen(buffer); i>0;i--){
-        printf("%d", buffer[i]);
-    }*/
+        printf("%c", buffer[i-1]);
+    }
 
-    printf(" ==> ");
+    printf(" ==> %d\n", result);
+    free(buffer);
 }
+
+
 
 /*!
 *   @brief Retorna logaritmo en base b de y

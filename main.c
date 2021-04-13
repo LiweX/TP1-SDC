@@ -57,9 +57,7 @@ if (!(strcmp(argv[1], "dec"))){
     int result=0;
     if ((char)argv[3][0]=='+') bin_add(a,b,&result);
     if ((char)argv[3][0]=='-') bin_sub(a,b,&result);
-    //decimal to string(result)
     print_decimal_in_binary(result);
-    printf("%d\n", result);
 }else{
     printf("Unknown type %s. Must be dec or bin\n", argv[1]);
     exit(EXIT_FAILURE);
