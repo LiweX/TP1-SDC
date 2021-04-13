@@ -11,6 +11,7 @@ assert_equals () {
   fi
 }
 
-test1="Decimal calculator\nSe realizara una suma decimal: 10"
+test1="Decimal calculator
+Se realizara una suma decimal: 10"
 response=$(./calc dec 5 + 5)
 assert_equals "$response" "$test1"
