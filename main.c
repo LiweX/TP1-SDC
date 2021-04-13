@@ -13,7 +13,7 @@ int isNumber(char s[]);
 int main( int argc, char *argv[] )  {
 
 if( argc == 5 ) {
-    printf("The %d arguments supplied are %s %s %s %s\n",argc-1, argv[1], argv[2],argv[3],argv[4]);
+   // printf("The %d arguments supplied are %s %s %s %s\n",argc-1, argv[1], argv[2],argv[3],argv[4]);
 }
 else {
     printf("Invalid operands, cast should be: \"./calc <dec/bin> <Operand1> <Operator> <Operand2>\"\n");
@@ -29,7 +29,7 @@ if (!( ((char)argv[3][0]=='+') || ((char)argv[3][0]=='-') )){
 }
 
 if (!(strcmp(argv[1], "dec"))){
-    printf("Decimal calculator\n");
+   // printf("Decimal calculator\n");
     if(!isNumber(argv[2])){
         printf("Invalid operand %s. Must contains only numbers\n", argv[2]);
         exit(EXIT_FAILURE);
