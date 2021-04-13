@@ -2,16 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include "utils.c"
 
 void dec_add(int a,int b) __attribute__((cdecl));
 void dec_sub(int a,int b) __attribute__((cdecl));
 void bin_add(int a,int b) __attribute__((cdecl));
 void bin_sub(int a,int b) __attribute__((cdecl));
 
-int isNumber(char s[]);
-
 int main( int argc, char *argv[] )  {
-
 if( argc == 5 ) {
     printf("The %d arguments supplied are %s %s %s %s\n",argc-1, argv[1], argv[2],argv[3],argv[4]);
 }
@@ -28,6 +26,7 @@ if (!( ((char)argv[3][0]=='+') || ((char)argv[3][0]=='-') )){
     exit(EXIT_FAILURE);
 }
 
+
 if (!(strcmp(argv[1], "dec"))){
     printf("Decimal calculator\n");
     if(!isNumber(argv[2])){
@@ -43,25 +42,24 @@ if (!(strcmp(argv[1], "dec"))){
     if ((char)argv[3][0]=='+') dec_add(a,b);
     if ((char)argv[3][0]=='-') dec_sub(a,b);
     //printf("Sum\n");
+}else if (!(strcmp(argv[1], "bin"))){
+    printf("Binary calculator\n");
+    if(!isBinary(argv[2])){
+        printf("Invalid operand %s. Binaries only contains ones and zeros\n", argv[2]);
+        exit(EXIT_FAILURE);
+    }
+    if(!isBinary(argv[4])){
+        printf("Invalid operand %s. Binaries only contains ones and zeros\n", argv[2]);
+        exit(EXIT_FAILURE);
+    }
+    int a = string_binary_to_decimal(argv[2]);
+    int b = string_binary_to_decimal(argv[4]);
+    if ((char)argv[3][0]=='+') bin_add(a,b);
+    if ((char)argv[3][0]=='-') bin_sub(a,b);
 }else{
     printf("Unknown type %s. Must be dec or bin\n", argv[1]);
     exit(EXIT_FAILURE);
-}
-if (!(strcmp(argv[1], "bin"))){
-    printf("Binary calculator\n");
-}
+}    
 
-    
-
-// TODO: FREE EN CASO DE MALLOC
 exit(EXIT_SUCCESS);
-}
-
-int isNumber(char s[]) {
-    int i = 0;
-    while (s[i]) {
-        if (!isdigit(s[i])) return 0;
-        i++;
-    }
-    return 1;
 }

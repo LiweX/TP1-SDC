@@ -1,5 +1,6 @@
 # Git Ignore
 calc
+.vscode
 
 # Prerequisites
 *.d
