@@ -73,4 +73,4 @@ double logbase(double y, int b)
     lg = log10(y)/log10(b);
     return(lg);
 }
-
+//cambio
