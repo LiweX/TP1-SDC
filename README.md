@@ -1,2 +1,2 @@
 # TP1-SDC
-First multimodule program between C and assembler
+First multimodule program between C and Assembly
